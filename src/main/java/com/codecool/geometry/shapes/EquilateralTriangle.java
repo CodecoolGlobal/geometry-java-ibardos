@@ -1,5 +1,30 @@
 package com.codecool.geometry.shapes;
 
-public class EquilateralTriangle extends Triangle {
-    
+public class EquilateralTriangle extends Shape {
+    private final float a;
+
+    public EquilateralTriangle(float a) {
+        this.a = a;
+    }
+
+    public float getA() {
+        return a;
+    }
+
+    @Override
+    public double calculateArea() {
+        return a * a * Math.sqrt(3) / 4;
+    }
+
+    @Override
+    public double calculatePerimeter() {
+        return 3 * a;
+    }
+
+    @Override
+    public String toString() {
+        return "EquilateralTriangle{" +
+                "a=" + a +
+                '}';
+    }
 }
