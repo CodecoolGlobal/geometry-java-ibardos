@@ -3,7 +3,7 @@ package com.codecool.geometry.shapes;
 public class Square extends Shape {
     private final float a;
 
-    public Square(float a, int id) {
+    public Square(int a, int id) {
         super(id);
         this.a = a;
     }

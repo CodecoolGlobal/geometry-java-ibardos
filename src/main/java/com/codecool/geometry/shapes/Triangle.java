@@ -9,7 +9,7 @@ public class Triangle extends Shape {
     // Semi-perimeter, for Area calculation with Heron's formula
     private final double s;
 
-    public Triangle(float a, float b, float c, int id) {
+    public Triangle(int a, int b, int c, int id) {
         super(id);
         this.a = a;
         this.b = b;

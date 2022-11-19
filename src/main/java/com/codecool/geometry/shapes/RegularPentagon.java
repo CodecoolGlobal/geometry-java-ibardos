@@ -3,7 +3,7 @@ package com.codecool.geometry.shapes;
 public class RegularPentagon extends Shape {
     private final float a;
 
-    public RegularPentagon(float a, int id) {
+    public RegularPentagon(int a, int id) {
         super(id);
         this.a = a;
     }

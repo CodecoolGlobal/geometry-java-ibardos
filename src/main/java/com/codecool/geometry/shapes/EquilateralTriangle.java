@@ -3,7 +3,7 @@ package com.codecool.geometry.shapes;
 public class EquilateralTriangle extends Shape {
     private final float a;
 
-    public EquilateralTriangle(float a, int id) {
+    public EquilateralTriangle(int a, int id) {
         super(id);
         this.a = a;
     }
