@@ -6,7 +6,8 @@ public class Circle extends Shape {
     // Radius
     private final float r;
 
-    public Circle(int r) {
+    public Circle(int r, int id) {
+        super(id);
         this.r = r;
     }
 

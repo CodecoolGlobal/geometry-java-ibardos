@@ -4,7 +4,8 @@ public class Rectangle extends Shape {
     private final float a;
     private final float b;
 
-    public Rectangle(float a, float b) {
+    public Rectangle(float a, float b, int id) {
+        super(id);
         this.a = a;
         this.b = b;
     }
