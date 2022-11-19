@@ -5,6 +5,16 @@ package com.codecool.geometry.shapes;
  * This is a abstract class representing geometrical shape.
  */
 public abstract class Shape {
+    private final int id;
+
+    public Shape(int id) {
+        this.id = id;
+    }
+
+    public int getId() {
+        return id;
+    }
+
     /**
      * Calculates shape's area.
      *
