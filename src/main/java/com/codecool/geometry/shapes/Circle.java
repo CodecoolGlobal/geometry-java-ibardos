@@ -27,8 +27,7 @@ public class Circle extends Shape {
 
     @Override
     public String toString() {
-        return "Circle{" +
-                "r=" + r +
-                '}';
+        return  "Circle: " +
+                "r= " + String.format("%.2f", r);
     }
 }

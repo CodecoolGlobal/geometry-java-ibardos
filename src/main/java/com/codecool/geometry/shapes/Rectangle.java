@@ -30,9 +30,8 @@ public class Rectangle extends Shape {
 
     @Override
     public String toString() {
-        return "Rectangle{" +
-                "a=" + a +
-                ", b=" + b +
-                '}';
+        return "Rectangle: " +
+                "a= " + String.format("%.2f", a) +
+                ", b= " + String.format("%.2f", b);
     }
 }

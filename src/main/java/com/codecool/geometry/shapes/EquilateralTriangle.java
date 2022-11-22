@@ -24,8 +24,7 @@ public class EquilateralTriangle extends Shape {
 
     @Override
     public String toString() {
-        return "EquilateralTriangle{" +
-                "a=" + a +
-                '}';
+        return "Equilateral Triangle: " +
+                "a= " + String.format("%.2f", a);
     }
 }
