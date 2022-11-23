@@ -191,6 +191,22 @@ public class TableBuilder {
 
         return separatorLine.toString();
     }
+
+    /**
+     * Centers a given String within the defined totalLength, padded on two sides by whitespaces
+     * @param text the given String that will be centered
+     * @param totalLength the total length of the output String with padding
+     * @return a padded String with the defined totalLength, padded with whitespaces on both sides
+     */
+    private String centerText(String text, int totalLength) {
+        String padded = "";
+        int padNum = (totalLength - text.length()) / 2;
+
+        padded += " ".repeat(padNum) + text + " ".repeat(padNum);
+
+        return padded;
+    }
+
     /**
      * Left pads a given String with the defined totalLength by adding whitespaces to the left
      * @param text the given String that will be left padded
