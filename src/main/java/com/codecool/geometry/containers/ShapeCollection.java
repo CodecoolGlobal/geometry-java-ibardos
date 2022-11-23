@@ -7,12 +7,19 @@ import com.codecool.geometry.shapes.RegularPentagon;
 import com.codecool.geometry.shapes.Shape;
 import com.codecool.geometry.shapes.Square;
 import com.codecool.geometry.shapes.Triangle;
+import com.codecool.geometry.utilities.TableBuilder;
+
 import java.util.ArrayList;
 
 public class ShapeCollection {
+    // Dependencies
+    private final TableBuilder tableBuilder;
+
     // In-memory database for storing Shape objects
     private final ArrayList<Shape> shapes;
+
     public ShapeCollection() {
+        this.tableBuilder = new TableBuilder();
         this.shapes = new ArrayList<>();
     }
 
@@ -66,5 +73,11 @@ public class ShapeCollection {
 
         return maxId + 1;
     }
+
+    /**
+     * Creates and returns a table, dynamic in width, with all the Shape objects, and their attributes
+     * @return a dynamic width table as String
+     */
+    public String getShapesTable() { return tableBuilder.buildTable(shapes); }
 
 }
