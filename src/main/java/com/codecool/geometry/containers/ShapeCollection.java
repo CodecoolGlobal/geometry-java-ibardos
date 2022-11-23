@@ -49,4 +49,22 @@ public class ShapeCollection {
 
         shapes.add(shape);
     }
+
+    /**
+     * Returns the next ID, based on the in memory Shapes collection
+     * @return the next ID number as integer
+     */
+    private int nextId() {
+        if (shapes.size() == 0) {
+            return 0;
+        }
+
+        int maxId = shapes.stream()
+                .max(Comparator.comparing(Shape::getId))
+                .get()
+                .getId();
+
+        return maxId + 1;
+    }
+
 }
