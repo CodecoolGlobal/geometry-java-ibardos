@@ -5,6 +5,8 @@ import com.codecool.geometry.shapes.Shape;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.NoSuchElementException;
+
 import static com.codecool.geometry.utilities.Util.*;
 import static java.lang.Integer.parseInt;
 
@@ -42,6 +44,18 @@ public class MainMenu {
         }
 
         inputWasWrong = false;
+    }
+
+    // 2. Show all shapes
+    /**
+     * Logic of Shapes table creation and representation on console from Main Menu
+     */
+    public void showAllShapes() throws IOException {
+        consoleClear();
+        System.out.println(AsciiArts.showAllShapes);
+        System.out.println(shapeCollection.getShapesTable());
+
+        pressEnterToContinue();
     }
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
