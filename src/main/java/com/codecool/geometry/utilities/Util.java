@@ -20,4 +20,25 @@ public class Util {
         System.in.read();
     }
 
+    /**
+     * Clears the console
+     */
+    public static void consoleClear() {
+        try {
+            String operatingSystem = System.getProperty("os.name"); //Check the current operating system
+
+            if (operatingSystem.contains("Windows")) {
+                ProcessBuilder pb = new ProcessBuilder("cmd", "/c", "cls");
+                Process startProcess = pb.inheritIO().start();
+                startProcess.waitFor();
+            } else {
+                ProcessBuilder pb = new ProcessBuilder("clear");
+                Process startProcess = pb.inheritIO().start();
+                startProcess.waitFor();
+            }
+        } catch (Exception e) {
+            System.out.println("Exception occurred during console clear.");
+            System.out.println(e);
+        }
+    }
 }
