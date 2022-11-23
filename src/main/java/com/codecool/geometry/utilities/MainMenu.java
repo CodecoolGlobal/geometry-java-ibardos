@@ -57,6 +57,27 @@ public class MainMenu {
 
         pressEnterToContinue();
     }
+
+    // 3. Show shape with the largest perimeter
+    /**
+     * Logic of finding and showing the Shape object with the largest perimeter from Main Menu
+     */
+    public void showShapeWithLargestPerimeter() throws IOException {
+        consoleClear();
+        System.out.println(AsciiArts.showShapeWithLargestPerimeter);
+
+        try {
+            Shape largestShapeByPerimeter = shapeCollection.getLargestShapeByPerimeter();
+            System.out.println(largestShapeByPerimeter + ", perimeter= " + String.format("%.2f", largestShapeByPerimeter.calculatePerimeter()));
+            System.out.println();
+        } catch (NoSuchElementException e) {
+            System.out.println("No data.");
+            System.out.println();
+        }
+
+        pressEnterToContinue();
+    }
+
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
      * @param askInputText text as String, which will be used to ask the user with
