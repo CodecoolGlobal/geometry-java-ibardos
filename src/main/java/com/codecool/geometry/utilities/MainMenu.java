@@ -116,6 +116,27 @@ public class MainMenu {
         inputWasWrong = false;
     }
 
+    // 6. Credits
+    /**
+     * Showing some information about the creator and say thank you from Main Menu
+     */
+    public void credits() throws IOException {
+        consoleClear();
+        System.out.println(AsciiArts.credits);
+        System.out.println("This is a Java demo project, made by Istvan Bardos.");
+        System.out.println();
+        System.out.println("The project was intended to design an interactive, yet stylish, console application in Java.");
+        System.out.println("Maven was used for build and project management, therefore the app should run on multiple platforms.");
+        System.out.println("Corresponding build & run commands were embedded in a shell script for ease of use.");
+        System.out.println();
+        System.out.println("Check out my GitHub profile for more projects: https://github.com/ibardos");
+        System.out.println();
+        System.out.println("Thank you for being here! :)");
+        System.out.println();
+
+        pressEnterToContinue();
+    }
+
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
      * @param askInputText text as String, which will be used to ask the user with
