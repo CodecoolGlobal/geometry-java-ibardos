@@ -85,4 +85,36 @@ public class TableBuilder {
             }
         }
     }
+
+    /**
+     * Creates the top line of the table, with the necessary table width
+     * @return top line as String
+     */
+    private String createTopLine() { return "/" + createLineMiddleSection() + "\\"; }
+
+    /**
+     * Creates the bottom line of the table, with the necessary table width
+     * @return bottom line as String
+     */
+    private String createBottomLine() { return "\n" + "\\" + createLineMiddleSection() + "/" + "\n"; }
+
+    /**
+     * Returns the width of the table, without opening and closing symbols on the sides
+     * @return the total width of the table's content part as integer
+     */
+    private int getTableMiddlePartLength() {
+        int tableMiddlePartLength = 0;
+        for (int maxColumnLength : columnLengths.values()) {
+            tableMiddlePartLength += maxColumnLength;
+        }
+
+        return tableMiddlePartLength+(columnLengths.size())*2-1; // Each column has 2 divider, but 1 is common;
+    }
+
+    /**
+     * Creates the middle section for table lines (first, last, middle) with the necessary length
+     * @return String containing "-" characters, representing the middle section of first, last, and middle line of the table
+     */
+    private String createLineMiddleSection() { return "-".repeat(getTableMiddlePartLength()); }
+
 }
