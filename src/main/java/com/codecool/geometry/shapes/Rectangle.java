@@ -1,23 +1,18 @@
 package com.codecool.geometry.shapes;
 
 public class Rectangle extends Shape {
+    // Sides
     private final float a;
     private final float b;
 
+    // Constructor
     public Rectangle(int a, int b, int id) {
         super(id);
         this.a = a;
         this.b = b;
     }
 
-    public float getA() {
-        return a;
-    }
-
-    public float getB() {
-        return b;
-    }
-
+    // Methods
     @Override
     public double calculateArea() {
         return a * b;

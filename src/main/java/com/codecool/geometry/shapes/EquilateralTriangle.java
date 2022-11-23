@@ -1,17 +1,16 @@
 package com.codecool.geometry.shapes;
 
 public class EquilateralTriangle extends Shape {
+    // Side
     private final float a;
 
+    // Constructor
     public EquilateralTriangle(int a, int id) {
         super(id);
         this.a = a;
     }
 
-    public float getA() {
-        return a;
-    }
-
+    // Methods
     @Override
     public double calculateArea() {
         return a * a * Math.sqrt(3) / 4;

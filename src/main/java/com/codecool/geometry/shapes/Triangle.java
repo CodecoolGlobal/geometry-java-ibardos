@@ -9,30 +9,16 @@ public class Triangle extends Shape {
     // Semi-perimeter, for Area calculation with Heron's formula
     private final double s;
 
+    // Constructor
     public Triangle(int a, int b, int c, int id) {
         super(id);
         this.a = a;
         this.b = b;
         this.c = c;
-        this.s = (a + b + c) / 2;
+        this.s = (a + b + c) / 2f;
     }
 
-    public float getA() {
-        return a;
-    }
-
-    public float getB() {
-        return b;
-    }
-
-    public float getC() {
-        return c;
-    }
-
-    public double getS() {
-        return s;
-    }
-
+    // Methods
     @Override
     public double calculateArea() {
         return Math.sqrt(s * (s - a) * (s - b) * (s - c));

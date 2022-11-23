@@ -6,15 +6,13 @@ public class Circle extends Shape {
     // Radius
     private final float r;
 
+    // Constructor
     public Circle(int r, int id) {
         super(id);
         this.r = r;
     }
 
-    public float getR() {
-        return r;
-    }
-
+    // Methods
     @Override
     public double calculateArea() {
         return PI * r * r;
