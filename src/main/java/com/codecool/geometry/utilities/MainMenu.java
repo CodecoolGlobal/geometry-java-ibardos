@@ -78,6 +78,26 @@ public class MainMenu {
         pressEnterToContinue();
     }
 
+    // 4. Show shape with the largest area
+    /**
+     * Logic of finding and showing the Shape object with the largest area from Main Menu
+     */
+    public void showShapeWithLargestArea() throws IOException {
+        consoleClear();
+        System.out.println(AsciiArts.showShapeWithLargestArea);
+
+        try {
+            Shape largestShapeByArea = shapeCollection.getLargestShapeByArea();
+            System.out.println(largestShapeByArea + ", area= " + String.format("%.2f", largestShapeByArea.calculateArea()));
+            System.out.println();
+        } catch (NoSuchElementException e) {
+            System.out.println("No data.");
+            System.out.println();
+        }
+
+        pressEnterToContinue();
+    }
+
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
      * @param askInputText text as String, which will be used to ask the user with
