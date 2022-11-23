@@ -98,6 +98,24 @@ public class MainMenu {
         pressEnterToContinue();
     }
 
+    // 5. Show formulas
+
+    /**
+     * Logic of finding the formulas of a given Shape type and showing on console from Main Menu
+     */
+    public void showFormulas() throws IOException {
+        askForShapeChoice("Which shape would you like to see the formula of: ", AsciiArts.showFormulas);
+
+        // In case of 0. the user should be redirected to Main menu
+        if (option != 0) {
+            printFormulasOfShape(option);
+
+            pressEnterToContinue();
+        }
+
+        inputWasWrong = false;
+    }
+
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
      * @param askInputText text as String, which will be used to ask the user with
