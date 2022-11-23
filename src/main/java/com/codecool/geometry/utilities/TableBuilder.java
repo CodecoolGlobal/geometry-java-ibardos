@@ -44,4 +44,45 @@ public class TableBuilder {
         return table.toString();
     }
 
+    /**
+     * Sets the length of each column in the table, based on header row and table data content, to achieve dynamic width
+     * @param shapes collection of existing in memory Shape objects
+     */
+    private void setTableColumnLengths(ArrayList<Shape> shapes) {
+        // Populate columnLengths HashMap with column names and corresponding lengths to have an initial dataset
+        for (String columnName : columnNames) {
+            columnLengths.put(columnName, columnName.length());
+        }
+
+        // Determine maximum column lengths and update HashMap (ID column already covered)
+        for (Shape shape : shapes) {
+            if (columnLengths.get(columnNames[0]) < String.valueOf(shape.getId()).length()) {
+                columnLengths.put(columnNames[0], String.valueOf(shape.getId()).length());
+            }
+
+            if (columnLengths.get(columnNames[1]) < shape.getClass().getSimpleName().length()) {
+                columnLengths.put(columnNames[1], shape.getClass().getSimpleName().length());
+            }
+
+            if (columnLengths.get(columnNames[2]) < shape.toString().length()) {
+                columnLengths.put(columnNames[2], shape.toString().length());
+            }
+
+            if (columnLengths.get(columnNames[3]) < String.format("%.2f", shape.calculatePerimeter()).length()) {
+                columnLengths.put(columnNames[3], String.format("%.2f", shape.calculatePerimeter()).length());
+            }
+
+            if (columnLengths.get(columnNames[4]) < FormulaProvider.getPerimeterFormulaForShape(shape.getClass().getSimpleName()).length()) {
+                columnLengths.put(columnNames[4], FormulaProvider.getPerimeterFormulaForShape(shape.getClass().getSimpleName()).length());
+            }
+
+            if (columnLengths.get(columnNames[5]) < String.format("%.2f", shape.calculateArea()).length()) {
+                columnLengths.put(columnNames[5], String.format("%.2f", shape.calculateArea()).length());
+            }
+
+            if (columnLengths.get(columnNames[6]) < FormulaProvider.getAreaFormulaForShape(shape.getClass().getSimpleName()).length()) {
+                columnLengths.put(columnNames[6], FormulaProvider.getAreaFormulaForShape(shape.getClass().getSimpleName()).length());
+            }
+        }
+    }
 }
