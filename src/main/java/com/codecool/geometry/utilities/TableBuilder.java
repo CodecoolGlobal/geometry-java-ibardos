@@ -142,6 +142,13 @@ public class TableBuilder {
     private String createTableData(ArrayList<Shape> shapes) {
         StringBuilder tableData = new StringBuilder();
 
+        if (shapes.isEmpty()) {
+            String noDataSign = "No data.";
+            String noData = centerText(noDataSign, getTableMiddlePartLength());
+
+            tableData.append("\n").append(createMiddleLine());
+            tableData.append("\n").append("|").append(noData).append("|");
+        }
 
         for (Shape shape : shapes) {
             tableData.append("\n").append(createSeparatorLine());
@@ -161,6 +168,12 @@ public class TableBuilder {
 
         return tableData.toString();
     }
+
+    /**
+     * Creates a simple separator middle line for the Shapes table, with the necessary table width, used when table have no data
+     * @return a middle line built up by "-" characters as String
+     */
+    private String createMiddleLine() { return "|" + createLineMiddleSection() + "|"; }
 
     /**
      * Creates a separator line for the Shapes table, with the necessary table and column widths, used when table have data
