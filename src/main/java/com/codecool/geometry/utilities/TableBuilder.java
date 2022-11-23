@@ -133,4 +133,49 @@ public class TableBuilder {
 
         return "\n" + headerRow;
     }
+
+    /**
+     * Create table body, as String, filled with data about in memory Shape objects
+     * @param shapes collection of existing in memory Shape objects
+     * @return table body, filled with data about existing Shape objects if any, otherwise "No data."
+     */
+    private String createTableData(ArrayList<Shape> shapes) {
+        StringBuilder tableData = new StringBuilder();
+
+
+        for (Shape shape : shapes) {
+            tableData.append("\n").append(createSeparatorLine());
+
+            tableData.append("\n");
+
+            tableData.append("|").append(padLeftText(String.valueOf(shape.getId()), columnLengths.get("ID")));
+            tableData.append("|").append(padLeftText(shape.getClass().getSimpleName(), columnLengths.get("Class")));
+            tableData.append("|").append(padLeftText(shape.toString(), columnLengths.get("toString")));
+            tableData.append("|").append(padLeftText(String.format("%.2f", shape.calculatePerimeter()), columnLengths.get("Perimeter")));
+            tableData.append("|").append(padLeftText(FormulaProvider.getPerimeterFormulaForShape(shape.getClass().getSimpleName()), columnLengths.get("Perimeter formula")));
+            tableData.append("|").append(padLeftText(String.format("%.2f", shape.calculateArea()), columnLengths.get("Area")));
+            tableData.append("|").append(padLeftText(FormulaProvider.getAreaFormulaForShape(shape.getClass().getSimpleName()), columnLengths.get("Area formula")));
+
+            tableData.append("|");
+        }
+
+        return tableData.toString();
+    }
+
+    /**
+     * Creates a separator line for the Shapes table, with the necessary table and column widths, used when table have data
+     * @return a middle line built up by "-" and "|" separator characters as String
+     */
+    private String createSeparatorLine() {
+        StringBuilder separatorLine = new StringBuilder();
+
+        for (int i = 0; i < columnLengths.values().size(); i++) {
+            separatorLine.append("|");
+            separatorLine.append("-".repeat(columnLengths.get(columnNames[i])+1));
+        }
+
+        separatorLine.append("|");
+
+        return separatorLine.toString();
+    }
 }
