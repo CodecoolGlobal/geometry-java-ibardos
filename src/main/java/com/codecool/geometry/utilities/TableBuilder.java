@@ -117,4 +117,20 @@ public class TableBuilder {
      */
     private String createLineMiddleSection() { return "-".repeat(getTableMiddlePartLength()); }
 
+    /**
+     * Creates the header row, in the necessary length (padded with whitespaces), of the table, by columnNames declared in it's the class
+     * @return String representation of the header row
+     */
+    private String createHeaderRow() {
+        StringBuilder headerRow = new StringBuilder();
+
+        for (String columnName : columnNames) {
+            int currentColumnLength = columnLengths.get(columnName);
+            headerRow.append("|").append(padLeftText(columnName, currentColumnLength));
+        }
+
+        headerRow.append("|"); // Add closing symbol
+
+        return "\n" + headerRow;
+    }
 }
