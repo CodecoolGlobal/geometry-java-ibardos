@@ -90,4 +90,14 @@ public class ShapeCollection {
                 .max(Comparator.comparing(Shape::calculatePerimeter))
                 .orElseThrow();
     }
+
+    /**
+     * Returns the Shape object, which has the largest area value
+     * @return Shape object
+     */
+    public Shape getLargestShapeByArea() {
+        return shapes.stream()
+                .max(Comparator.comparing(Shape::calculateArea))
+                .orElseThrow();
+    }
 }
