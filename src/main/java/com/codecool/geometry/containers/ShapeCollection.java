@@ -10,6 +10,7 @@ import com.codecool.geometry.shapes.Triangle;
 import com.codecool.geometry.utilities.TableBuilder;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
 public class ShapeCollection {
     // Dependencies
@@ -80,4 +81,13 @@ public class ShapeCollection {
      */
     public String getShapesTable() { return tableBuilder.buildTable(shapes); }
 
+    /**
+     * Returns the Shape object, which has the largest perimeter value
+     * @return Shape object
+     */
+    public Shape getLargestShapeByPerimeter() {
+        return shapes.stream()
+                .max(Comparator.comparing(Shape::calculatePerimeter))
+                .orElseThrow();
+    }
 }
