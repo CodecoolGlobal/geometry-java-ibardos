@@ -66,4 +66,13 @@ public class ConsoleApplication {
         }
     }
 
+    /**
+     * Greets the user before Main menu
+     */
+    private void greeting() throws IOException {
+        consoleClear();
+        System.out.println(AsciiArts.welcome);
+        pressEnterToContinue();
+    }
+
 }
