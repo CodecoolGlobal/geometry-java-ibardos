@@ -1,0 +1,153 @@
+@startuml
+
+abstract class Shape {
+-id <<+get>> : int
++{abstract} calculateArea() : double
++{abstract} calculatePerimeter() : double
+}
+
+class Circle {
+-r : float
++toString() : String
+}
+
+class EquilateralTriangle {
+-a : float
++toString() : String
+}
+
+class Rectangle {
+-a : float
+-b : float
++toString() : String
+}
+
+class RegularPentagon {
+-a : float
++toString() : String
+}
+
+class Square {
+-a : float
++toString() : String
+}
+
+class Triangle {
+-a : float
+-b : float
+-c : float
+-s : float
++toString() : String
+}
+
+class ShapeCollection {
+-tableBuilder : TableBuilder
+-shapes : ArrayList<Shape>
++addShape(int, ArrayList<Integer>) : void
+-nextId() : int
++getShapesTable() : String
++getLargestShapeByPerimeter() : Shape
++getLargestShapeByArea() : Shape
+}
+
+class AsciiArts {
++{static} welcome : String
++{static} shapeAdded : String
++{static} mainMenu : String
++{static} addNewShape : String
++{static} showAllShapes : String
++{static} showShapeWithLargestPerimeter : String
++{static} showShapeWithLargestArea : String
++{static} showFormulas : String : String
++{static} credits : String
++{static} exit : String
++{static} circle : String
++{static} rectangle : String
++{static} triangle : String
++{static} square : String
++{static} equilateralTriangle : String
++{static} regularPentagon : String
+}
+
+class ConsoleApplication {
+-mainMenu : MainMenu
+-isRunning : boolean
+-inputWasWrong : boolean
+-option : int
++run() : void
+-greeting() : void
+-askForInputAndShowMainMenu() : void
+}
+
+class FormulaProvider {
++{static}getAreaFormulaForShape() : String
++{static}getPerimeterFormulaForShape() : String
+}
+
+class MainMenu {
+-shapeCollection : ShapeCollection
+-inputWasWrong : boolean
+-option : int
++addNewShape() : void
++showAllShapes() : void
++showShapeWithLargestPerimeter() : void
++showShapeWithLargestArea() : void
++showFormulas() : void
++credits() : void
++exit() : void
+-printFormulasOfShape(int) : void
+-getParametersForShapeCreation(int) : ArrayList<Integer>
++showMainMenu(boolean) : void
+-shapeOptionsMenu() : String
+-askForShapeChoice(String, String) : void
+}
+
+class TableBuilder {
+-columnNames : String[]
+-columnLengths : HashMap<String, Integer>
++buildTable : String
+-setTableColumnLengths(ArrayList<Shape>)
+-createTopLine() : String
+-createBottomLine() : String
+-getTableMiddlePartLength() : int
+-createLineMiddleSection() : String
+-createHeaderRow() : String
+-createTableData(ArrayList<Shape>) : String
+-createMiddleLine() : String
+-createSeparatorLine() : String
+-centerText(String, int)() : String
+-padLeftText(String, int)() : String
+}
+
+class Util {
++{static} console : Console
++{static} pressEnterToContinue() : void
++{static} consoleClear() : void
+}
+
+
+Shape <|-- Circle
+Shape <|-- EquilateralTriangle
+Shape <|-- Rectangle
+Shape <|-- RegularPentagon
+Shape <|-- Square
+Shape <|-- Triangle
+
+ConsoleApplication o-right- MainMenu
+
+MainMenu o-- ShapeCollection
+
+MainMenu .. AsciiArts
+ConsoleApplication .. AsciiArts
+
+ShapeCollection o-- Shape
+
+Util .. ConsoleApplication
+Util .. MainMenu
+
+TableBuilder --o ShapeCollection
+
+FormulaProvider .. MainMenu
+FormulaProvider .. TableBuilder
+
+@enduml
