@@ -137,6 +137,16 @@ public class MainMenu {
         pressEnterToContinue();
     }
 
+    // 0. Exit
+    /**
+     * Logic of exiting the application from Main Menu
+     */
+    public void exit() {
+        consoleClear();
+        System.out.println(AsciiArts.exit);
+    }
+
+
     /**
      * Asks user input for shape choice, with the given text and ascii art as part of the UI
      * @param askInputText text as String, which will be used to ask the user with
