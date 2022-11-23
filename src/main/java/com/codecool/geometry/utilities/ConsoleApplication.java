@@ -5,6 +5,7 @@ import com.codecool.geometry.containers.ShapeCollection;
 import java.io.IOException;
 
 import static com.codecool.geometry.utilities.Util.*;
+import static java.lang.Integer.parseInt;
 
 /**
  * This class is intended to contain the main logic of the application
@@ -75,4 +76,20 @@ public class ConsoleApplication {
         pressEnterToContinue();
     }
 
+    /**
+     * Asks the user for input, while showing the Main menu on console, with information on wrong inputs
+     */
+    private void askForInputAndShowMainMenu() {
+        try {
+            option = -1;
+            mainMenu.showMainMenu(inputWasWrong);
+            option = parseInt(console.readLine("Please choose from the list: "));
+
+            if (option < 0 || option > 6) {
+                inputWasWrong = true;
+            }
+        } catch (NumberFormatException e) {
+            inputWasWrong = true;
+        }
+    }
 }
