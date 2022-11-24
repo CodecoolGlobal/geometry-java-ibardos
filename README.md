@@ -34,17 +34,22 @@ a table, consisting of stored Shape objects, with dynamic column width allocatio
 ## How to use:
 1. Fork my repository (do not clone it!)
 2. Open your Command Line Interface (Terminal) **in the folder** of the project *(see Hints)*
-3. Install the Java Runtime Environment (JRE), if you haven't already, from here:
+3. Install Apache Maven, if you haven't already, from here:
+<a href="https://maven.apache.org/install.html">Maven download</a>
+4. Install the Java Runtime Environment (JRE), if you haven't already, from here:
 <a href="https://www.java.com/en/download/">Java download</a>
-4. You have a predefined Shell script in the project's root folder, which can build and run the application:
+5. You have a predefined Shell script in the project's root folder, which can build and run the application:
    - To run the script, use this Terminal command from the root folder of the repository: ```sh geometry_build_and_run.sh```
-5. Use the application in your Terminal. Make your inputs with your keyboard:
+   - In case of Windows OS, if the latter doesn't work, you can simply click on the "geometry_build_and_run.sh" file
+   at your file explorer
+6. Use the application in your Terminal. Make your inputs with your keyboard:
    - Your inputs will be all validated, so don't need to worry about bugs or crashes. :)
-6. Be happy!
+7. Be happy!
 
 <br>
 
 ## Hints:
+- You can check whether you already have Maven on your machine by using the following Terminal command: ```mvn --version```
 - You can check whether you already have JRE on your machine by using the following Terminal command: ```java --version```
 - If you need to install JRE, choose the appropriate version for your operating system on the link above
 - If you don't understand something: Google it, or feel free to contact me.
