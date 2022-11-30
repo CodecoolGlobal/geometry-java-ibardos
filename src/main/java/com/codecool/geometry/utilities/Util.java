@@ -7,6 +7,9 @@ import java.io.IOException;
  * A class to store reusable static helper methods, to be used throughout the whole application
  */
 public class Util {
+    // Prevent instantiation of a fully static class
+    private Util() {}
+
     /**
      * A console object for handling user input via reading the console
      */

@@ -1,6 +1,8 @@
 package com.codecool.geometry.utilities;
 
 public class FormulaProvider {
+    // Prevent instantiation of a fully static class
+    private FormulaProvider() {}
 
     /**
      * Returns the area formula of a given shape

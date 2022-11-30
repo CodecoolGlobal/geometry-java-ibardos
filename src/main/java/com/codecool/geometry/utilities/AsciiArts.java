@@ -4,6 +4,9 @@ package com.codecool.geometry.utilities;
  * This class is storing ASCII arts for UI elements
  */
 public class AsciiArts {
+    // Prevent instantiation of a fully static class
+    private AsciiArts() {}
+
     public static final String welcome = "   ____                           _                                                    \n" +
             "  / ___| ___  ___  _ __ ___   ___| |_ _ __ _   _                                       \n" +
             " | |  _ / _ \\/ _ \\| '_ ` _ \\ / _ \\ __| '__| | | |                                      \n" +
