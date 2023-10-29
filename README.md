@@ -24,10 +24,10 @@ a table, consisting of stored Shape objects, with dynamic column width allocatio
     - Polymorphism
   - SOLID principles
   - Static fields/methods
-  - String manipulation
-  - Input validation
-  - Exception handling
-  - ArrayList, HashMap
+- String manipulation
+- Input validation
+- Exception handling
+- ArrayList, HashMap data structures
 
 <br>
 
