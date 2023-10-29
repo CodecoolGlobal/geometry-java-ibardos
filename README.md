@@ -18,11 +18,11 @@ a table, consisting of stored Shape objects, with dynamic column width allocatio
 - PlantUML
 - Object-oriented programming
   - OOP principles
+    - Inheritance
+    - Abstraction
+    - Polymorphism
+    - Encapsulation
   - SOLID principles
-  - Inheritance
-  - Abstraction
-  - Polymorphism
-  - Encapsulation
   - Static fields/methods
   - String manipulation
   - Input validation
