@@ -11,10 +11,23 @@ import java.util.HashMap;
 public class TableBuilder {
     // Fields
     // Store column names
-    private final String[] columnNames = {"ID", "Shape", "Shape data", "Perimeter", "Perimeter formula", "Area", "Area formula"};
+    private final String[] columnNames;
 
     // Store column names and their corresponding final lengths as key/value pairs
-    private final HashMap<String, Integer> columnLengths = new HashMap<>();
+    private final HashMap<String, Integer> columnLengths;
+
+    // Constructor
+
+    public TableBuilder() {
+        this.columnNames = new String[]{"ID", "Shape", "Shape data", "Perimeter", "Perimeter formula", "Area", "Area formula"};
+        this.columnLengths = new HashMap<>();
+
+        // Populate columnLengths HashMap with column names and corresponding lengths to have an initial dataset
+        for (String columnName : columnNames) {
+            columnLengths.put(columnName, columnName.length());
+        }
+    }
+
 
     // Methods
     /**
@@ -49,11 +62,6 @@ public class TableBuilder {
      * @param shapes collection of existing in memory Shape objects
      */
     private void setTableColumnLengths(ArrayList<Shape> shapes) {
-        // Populate columnLengths HashMap with column names and corresponding lengths to have an initial dataset
-        for (String columnName : columnNames) {
-            columnLengths.put(columnName, columnName.length());
-        }
-
         // Determine maximum column lengths and update HashMap (ID column already covered)
         for (Shape shape : shapes) {
             if (columnLengths.get(columnNames[0]) < String.valueOf(shape.getId()).length()) {
