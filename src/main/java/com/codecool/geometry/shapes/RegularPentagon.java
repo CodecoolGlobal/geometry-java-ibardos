@@ -22,8 +22,12 @@ public class RegularPentagon extends Shape {
     }
 
     @Override
+    public String getData() {
+        return "a= " + String.format("%.2f", a);
+    }
+
+    @Override
     public String toString() {
-        return "Regular Pentagon: " +
-                "a= " + String.format("%.2f", a);
+        return "Regular Pentagon: " + getData();
     }
 }

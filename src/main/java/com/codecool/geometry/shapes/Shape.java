@@ -28,4 +28,10 @@ public abstract class Shape {
      * @return perimeter of the shape
      */
     public abstract double calculatePerimeter();
+
+    /**
+     * Returns a formatted String literal with data stored in private inner fields.
+     * @return String of data from the particular object.
+     */
+    public abstract String getData();
 }

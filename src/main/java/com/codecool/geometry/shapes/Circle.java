@@ -24,8 +24,12 @@ public class Circle extends Shape {
     }
 
     @Override
+    public String getData() {
+        return "r= " + String.format("%.2f", r);
+    }
+
+    @Override
     public String toString() {
-        return  "Circle: " +
-                "r= " + String.format("%.2f", r);
+        return  "Circle: " + getData();
     }
 }

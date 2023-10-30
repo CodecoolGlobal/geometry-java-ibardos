@@ -11,7 +11,7 @@ import java.util.HashMap;
 public class TableBuilder {
     // Fields
     // Store column names
-    private final String[] columnNames = {"ID", "Class", "toString", "Perimeter", "Perimeter formula", "Area", "Area formula"};
+    private final String[] columnNames = {"ID", "Shape", "Shape data", "Perimeter", "Perimeter formula", "Area", "Area formula"};
 
     // Store column names and their corresponding final lengths as key/value pairs
     private final HashMap<String, Integer> columnLengths = new HashMap<>();
@@ -64,8 +64,8 @@ public class TableBuilder {
                 columnLengths.put(columnNames[1], shape.getClass().getSimpleName().length());
             }
 
-            if (columnLengths.get(columnNames[2]) < shape.toString().length()) {
-                columnLengths.put(columnNames[2], shape.toString().length());
+            if (columnLengths.get(columnNames[2]) < shape.getData().length()) {
+                columnLengths.put(columnNames[2], shape.getData().length());
             }
 
             if (columnLengths.get(columnNames[3]) < String.format("%.2f", shape.calculatePerimeter()).length()) {
@@ -156,8 +156,8 @@ public class TableBuilder {
             tableData.append("\n");
 
             tableData.append("|").append(padLeftText(String.valueOf(shape.getId()), columnLengths.get("ID")));
-            tableData.append("|").append(padLeftText(shape.getClass().getSimpleName(), columnLengths.get("Class")));
-            tableData.append("|").append(padLeftText(shape.toString(), columnLengths.get("toString")));
+            tableData.append("|").append(padLeftText(shape.getClass().getSimpleName(), columnLengths.get("Shape")));
+            tableData.append("|").append(padLeftText(shape.getData(), columnLengths.get("Shape data")));
             tableData.append("|").append(padLeftText(String.format("%.2f", shape.calculatePerimeter()), columnLengths.get("Perimeter")));
             tableData.append("|").append(padLeftText(FormulaProvider.getPerimeterFormulaForShape(shape.getClass().getSimpleName()), columnLengths.get("Perimeter formula")));
             tableData.append("|").append(padLeftText(String.format("%.2f", shape.calculateArea()), columnLengths.get("Area")));

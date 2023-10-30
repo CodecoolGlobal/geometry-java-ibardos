@@ -30,11 +30,15 @@ public class Triangle extends Shape {
     }
 
     @Override
-    public String toString() {
-        return "Triangle: " +
-                "a= " + String.format("%.2f", a) +
+    public String getData() {
+        return "a= " + String.format("%.2f", a) +
                 ", b= " + String.format("%.2f", b) +
                 ", c= " + String.format("%.2f", c) +
                 ", s= " + String.format("%.2f", s);
+    }
+
+    @Override
+    public String toString() {
+        return this.getClass().getSimpleName() + " " + getData();
     }
 }

@@ -22,8 +22,12 @@ public class EquilateralTriangle extends Shape {
     }
 
     @Override
+    public String getData() {
+        return "a= " + String.format("%.2f", a);
+    }
+
+    @Override
     public String toString() {
-        return "Equilateral Triangle: " +
-                "a= " + String.format("%.2f", a);
+        return "Equilateral Triangle: " + getData();
     }
 }

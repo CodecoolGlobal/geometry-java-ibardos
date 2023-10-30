@@ -22,8 +22,12 @@ public class Square extends Shape {
     }
 
     @Override
+    public String getData() {
+        return "a= " + String.format("%.2f", a);
+    }
+
+    @Override
     public String toString() {
-        return "Square: " +
-                "a= " + String.format("%.2f", a);
+        return "Square: " + getData();
     }
 }
