@@ -17,7 +17,6 @@ public class TableBuilder {
     private final HashMap<String, Integer> columnLengths;
 
     // Constructor
-
     public TableBuilder() {
         this.columnNames = new String[]{"ID", "Shape", "Shape data", "Perimeter", "Perimeter formula", "Area", "Area formula"};
         this.columnLengths = new HashMap<>();
@@ -27,8 +26,7 @@ public class TableBuilder {
             columnLengths.put(columnName, columnName.length());
         }
     }
-
-
+    
     // Methods
     /**
      * Stores logic to build a dynamic table of in memory stored shapes for console representation
