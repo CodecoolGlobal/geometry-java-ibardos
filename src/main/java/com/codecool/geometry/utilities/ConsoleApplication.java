@@ -27,7 +27,7 @@ public class ConsoleApplication {
     /**
      * Runs the main logic of the console application
      */
-    public void run() throws IOException {
+    public void run() {
 
         greeting();
 
@@ -70,7 +70,7 @@ public class ConsoleApplication {
     /**
      * Greets the user before Main menu
      */
-    private void greeting() throws IOException {
+    private void greeting() {
         consoleClear();
         System.out.println(AsciiArts.welcome);
         pressEnterToContinue();

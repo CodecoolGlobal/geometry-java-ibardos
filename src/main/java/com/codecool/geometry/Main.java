@@ -5,7 +5,7 @@ import com.codecool.geometry.utilities.ConsoleApplication;
 import java.io.IOException;
 
 public class Main {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         ConsoleApplication consoleApplication = new ConsoleApplication();
 
         consoleApplication.run();
