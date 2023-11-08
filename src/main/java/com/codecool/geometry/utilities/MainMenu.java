@@ -3,7 +3,6 @@ package com.codecool.geometry.utilities;
 import com.codecool.geometry.containers.ShapeCollection;
 import com.codecool.geometry.shapes.Shape;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 
@@ -29,7 +28,7 @@ public class MainMenu {
     /**
      * Logic of new Shape creation and addition from Main Menu
      */
-    public void addNewShape() throws IOException {
+    public void addNewShape() {
         askForShapeChoice("What shape would you like to add: ", AsciiArts.addNewShape);
 
         // In case of 0. the user should be redirected to Main menu
@@ -50,7 +49,7 @@ public class MainMenu {
     /**
      * Logic of Shapes table creation and representation on console from Main Menu
      */
-    public void showAllShapes() throws IOException {
+    public void showAllShapes() {
         consoleClear();
         System.out.println(AsciiArts.showAllShapes);
         System.out.println(shapeCollection.getShapesTable());
@@ -62,7 +61,7 @@ public class MainMenu {
     /**
      * Logic of finding and showing the Shape object with the largest perimeter from Main Menu
      */
-    public void showShapeWithLargestPerimeter() throws IOException {
+    public void showShapeWithLargestPerimeter() {
         consoleClear();
         System.out.println(AsciiArts.showShapeWithLargestPerimeter);
 
@@ -82,7 +81,7 @@ public class MainMenu {
     /**
      * Logic of finding and showing the Shape object with the largest area from Main Menu
      */
-    public void showShapeWithLargestArea() throws IOException {
+    public void showShapeWithLargestArea() {
         consoleClear();
         System.out.println(AsciiArts.showShapeWithLargestArea);
 
@@ -103,7 +102,7 @@ public class MainMenu {
     /**
      * Logic of finding the formulas of a given Shape type and showing on console from Main Menu
      */
-    public void showFormulas() throws IOException {
+    public void showFormulas() {
         askForShapeChoice("Which shape would you like to see the formula of: ", AsciiArts.showFormulas);
 
         // In case of 0. the user should be redirected to Main menu
@@ -120,7 +119,7 @@ public class MainMenu {
     /**
      * Showing some information about the creator and say thank you from Main Menu
      */
-    public void credits() throws IOException {
+    public void credits() {
         consoleClear();
         System.out.println(AsciiArts.credits);
         System.out.println("This is a Java demo project, made by Istvan Bardos.");
