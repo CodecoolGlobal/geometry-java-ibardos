@@ -57,7 +57,7 @@ public class ShapeCollection {
      * @return the next ID number as integer
      */
     private int nextId() {
-        if (shapes.size() == 0) {
+        if (shapes.isEmpty()) {
             return 0;
         }
 
