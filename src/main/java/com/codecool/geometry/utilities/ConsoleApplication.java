@@ -2,8 +2,6 @@ package com.codecool.geometry.utilities;
 
 import com.codecool.geometry.containers.ShapeCollection;
 
-import java.io.IOException;
-
 import static com.codecool.geometry.utilities.Util.*;
 import static java.lang.Integer.parseInt;
 

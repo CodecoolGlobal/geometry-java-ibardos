@@ -3,7 +3,6 @@ package com.codecool.geometry.utilities;
 import com.codecool.geometry.containers.ShapeCollection;
 import com.codecool.geometry.shapes.Shape;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.NoSuchElementException;
 

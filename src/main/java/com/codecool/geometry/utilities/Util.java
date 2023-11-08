@@ -1,7 +1,6 @@
 package com.codecool.geometry.utilities;
 
 import java.io.Console;
-import java.io.IOException;
 
 /**
  * A class to store reusable static helper methods, to be used throughout the whole application
