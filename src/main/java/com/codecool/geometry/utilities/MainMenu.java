@@ -201,43 +201,56 @@ public class MainMenu {
     private ArrayList<Integer> getParametersForShapeCreation(int shapeChoice) {
         ArrayList<Integer> parameterList = new ArrayList<>();
 
-        switch (shapeChoice) {
-            case 1: // Circle
-                System.out.println(AsciiArts.circle);
-                int rCircle = parseInt(console.readLine("Define radius: "));
-                parameterList.add(rCircle);
-                break;
-            case 2: // Rectangle
-                System.out.println(AsciiArts.rectangle);
-                int aRectangle = parseInt(console.readLine("Define side A: "));
-                int bRectangle = parseInt(console.readLine("Define side B: "));
-                parameterList.add(aRectangle);
-                parameterList.add(bRectangle);
-                break;
-            case 3: // Triangle
-                System.out.println(AsciiArts.triangle);
-                int aTriangle = parseInt(console.readLine("Define side A: "));
-                int bTriangle = parseInt(console.readLine("Define side B: "));
-                int cTriangle = parseInt(console.readLine("Define side C: "));
-                parameterList.add(aTriangle);
-                parameterList.add(bTriangle);
-                parameterList.add(cTriangle);
-                break;
-            case 4: // Square
-                System.out.println(AsciiArts.square);
-                int aSquare = parseInt(console.readLine("Define side A: "));
-                parameterList.add(aSquare);
-                break;
-            case 5: // EquilateralTriangle
-                System.out.println(AsciiArts.equilateralTriangle);
-                int aEquilateralTriangle = parseInt(console.readLine("Define side A: "));
-                parameterList.add(aEquilateralTriangle);
-                break;
-            case 6: // RegularPentagon
-                System.out.println(AsciiArts.regularPentagon);
-                int aRegularPentagon = parseInt(console.readLine("Define side A: "));
-                parameterList.add(aRegularPentagon);
-                break;
+        while (parameterList.isEmpty()) {
+            try {
+                switch (shapeChoice) {
+                    case 1: // Circle
+                        System.out.println(AsciiArts.circle);
+                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        int rCircle = parseInt(console.readLine("Define radius: "));
+                        parameterList.add(rCircle);
+                        break;
+                    case 2: // Rectangle
+                        System.out.println(AsciiArts.rectangle);
+                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over.");
+                        int aRectangle = parseInt(console.readLine("Define side A: "));
+                        int bRectangle = parseInt(console.readLine("Define side B: "));
+                        parameterList.add(aRectangle);
+                        parameterList.add(bRectangle);
+                        break;
+                    case 3: // Triangle
+                        System.out.println(AsciiArts.triangle);
+                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over.");
+                        int aTriangle = parseInt(console.readLine("Define side A: "));
+                        int bTriangle = parseInt(console.readLine("Define side B: "));
+                        int cTriangle = parseInt(console.readLine("Define side C: "));
+                        parameterList.add(aTriangle);
+                        parameterList.add(bTriangle);
+                        parameterList.add(cTriangle);
+                        break;
+                    case 4: // Square
+                        System.out.println(AsciiArts.square);
+                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        int aSquare = parseInt(console.readLine("Define side A: "));
+                        parameterList.add(aSquare);
+                        break;
+                    case 5: // EquilateralTriangle
+                        System.out.println(AsciiArts.equilateralTriangle);
+                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        int aEquilateralTriangle = parseInt(console.readLine("Define side A: "));
+                        parameterList.add(aEquilateralTriangle);
+                        break;
+                    case 6: // RegularPentagon
+                        System.out.println(AsciiArts.regularPentagon);
+                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        int aRegularPentagon = parseInt(console.readLine("Define side A: "));
+                        parameterList.add(aRegularPentagon);
+                        break;
+                }
+            } catch (NumberFormatException e) {
+                inputWasWrong = true;
+                consoleClear();
+            }
         }
 
         return parameterList;
