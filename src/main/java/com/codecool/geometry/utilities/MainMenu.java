@@ -322,7 +322,7 @@ public class MainMenu {
 
                 System.out.println(asciiArt);
                 System.out.println(shapeOptionsMenu());
-                
+
                 option = parseInt(console.readLine(askInputText));
 
                 if (option < 0 || option > 6) {
