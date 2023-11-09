@@ -45,7 +45,7 @@ public class MainMenu {
         consoleClear();
         System.out.println(mainMenu);
     }
-    
+
     // Menus respectively
 
     // 1. Add new shape
@@ -75,6 +75,7 @@ public class MainMenu {
      */
     public void showAllShapes() {
         consoleClear();
+
         System.out.println(AsciiArts.showAllShapes);
         System.out.println(shapeCollection.getShapesTable());
 
@@ -145,6 +146,7 @@ public class MainMenu {
      */
     public void credits() {
         consoleClear();
+
         System.out.println(AsciiArts.credits);
         System.out.println("This is a Java demo project, made by Istvan Bardos.");
         System.out.println();
@@ -177,6 +179,8 @@ public class MainMenu {
      * @param shapeChoiceForFormula shape choice as integer (from menu)
      */
     private void printFormulasOfShape(int shapeChoiceForFormula) {
+        consoleClear();
+
         switch (shapeChoiceForFormula) {
             case 1:
                 System.out.println(AsciiArts.circle);
@@ -225,7 +229,11 @@ public class MainMenu {
     private ArrayList<Integer> getParametersForShapeCreation(int shapeChoice) {
         ArrayList<Integer> parameterList = new ArrayList<>();
 
+        inputWasWrong = false;
+
         while (parameterList.isEmpty()) {
+            consoleClear();
+
             try {
                 switch (shapeChoice) {
                     case 1: // Circle
@@ -273,7 +281,6 @@ public class MainMenu {
                 }
             } catch (NumberFormatException e) {
                 inputWasWrong = true;
-                consoleClear();
             }
         }
 
@@ -312,8 +319,10 @@ public class MainMenu {
         while (option < 0 || option > 6) {
             try {
                 consoleClear();
+
                 System.out.println(asciiArt);
                 System.out.println(shapeOptionsMenu());
+                
                 option = parseInt(console.readLine(askInputText));
 
                 if (option < 0 || option > 6) {
@@ -323,7 +332,5 @@ public class MainMenu {
                 inputWasWrong = true;
             }
         }
-
-        consoleClear();
     }
 }
