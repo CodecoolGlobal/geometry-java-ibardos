@@ -40,6 +40,8 @@ public class MainMenu {
 
         if (inputWasWrong) {
             mainMenu.append("\n").append("Wrong input! Try again.");
+        } else {
+            mainMenu.append("\n");
         }
 
         consoleClear();
@@ -238,13 +240,13 @@ public class MainMenu {
                 switch (shapeChoice) {
                     case 1: // Circle
                         System.out.println(AsciiArts.circle);
-                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        if (inputWasWrong) System.out.println("Wrong input! Start over."); else System.out.println();
                         int rCircle = parseInt(console.readLine("Define radius: "));
                         parameterList.add(rCircle);
                         break;
                     case 2: // Rectangle
                         System.out.println(AsciiArts.rectangle);
-                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over.");
+                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over."); else System.out.println();
                         int aRectangle = parseInt(console.readLine("Define side A: "));
                         int bRectangle = parseInt(console.readLine("Define side B: "));
                         parameterList.add(aRectangle);
@@ -252,7 +254,7 @@ public class MainMenu {
                         break;
                     case 3: // Triangle
                         System.out.println(AsciiArts.triangle);
-                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over.");
+                        if (inputWasWrong) System.out.println("One of the inputs was wrong! Start over."); else System.out.println();
                         int aTriangle = parseInt(console.readLine("Define side A: "));
                         int bTriangle = parseInt(console.readLine("Define side B: "));
                         int cTriangle = parseInt(console.readLine("Define side C: "));
@@ -262,19 +264,19 @@ public class MainMenu {
                         break;
                     case 4: // Square
                         System.out.println(AsciiArts.square);
-                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        if (inputWasWrong) System.out.println("Wrong input! Start over."); else System.out.println();
                         int aSquare = parseInt(console.readLine("Define side A: "));
                         parameterList.add(aSquare);
                         break;
                     case 5: // EquilateralTriangle
                         System.out.println(AsciiArts.equilateralTriangle);
-                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        if (inputWasWrong) System.out.println("Wrong input! Start over."); else System.out.println();
                         int aEquilateralTriangle = parseInt(console.readLine("Define side A: "));
                         parameterList.add(aEquilateralTriangle);
                         break;
                     case 6: // RegularPentagon
                         System.out.println(AsciiArts.regularPentagon);
-                        if (inputWasWrong) System.out.println("Wrong input! Start over.");
+                        if (inputWasWrong) System.out.println("Wrong input! Start over."); else System.out.println();
                         int aRegularPentagon = parseInt(console.readLine("Define side A: "));
                         parameterList.add(aRegularPentagon);
                         break;
@@ -303,6 +305,8 @@ public class MainMenu {
 
         if (inputWasWrong) {
             shapeOptions.append("\n").append("Wrong input! Try again.");
+        } else {
+            shapeOptions.append("\n");
         }
 
         return shapeOptions.toString();
