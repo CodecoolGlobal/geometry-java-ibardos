@@ -22,6 +22,30 @@ public class MainMenu {
         this.shapeCollection = shapeCollection;
     }
 
+    /**
+     * Prints out the Main menu to console, and a "Wrong input!" message if the previous input was wrong
+     * @param inputWasWrong variable used as a switch to keep the state of the last user input (correct/wrong)
+     */
+    public void showMainMenu(boolean inputWasWrong) {
+        StringBuilder mainMenu = new StringBuilder()
+                .append(AsciiArts.mainMenu)
+                .append("1. Add new shape")
+                .append("\n" + "2. Show all shapes")
+                .append("\n" + "3. Show shape with the largest perimeter")
+                .append("\n" + "4. Show shape with the largest area")
+                .append("\n" + "5. Show formulas")
+                .append("\n" + "6. Credits")
+                .append("\n" + "0. Exit")
+                .append("\n");
+
+        if (inputWasWrong) {
+            mainMenu.append("\n").append("Wrong input! Try again.");
+        }
+
+        consoleClear();
+        System.out.println(mainMenu);
+    }
+    
     // Menus respectively
 
     // 1. Add new shape
@@ -254,30 +278,6 @@ public class MainMenu {
         }
 
         return parameterList;
-    }
-
-    /**
-     * Prints out the Main menu to console, and a "Wrong input!" message if the previous input was wrong
-     * @param inputWasWrong variable used as a switch to keep the state of the last user input (correct/wrong)
-     */
-    public void showMainMenu(boolean inputWasWrong) {
-        StringBuilder mainMenu = new StringBuilder()
-                .append(AsciiArts.mainMenu)
-                .append("1. Add new shape")
-                .append("\n" + "2. Show all shapes")
-                .append("\n" + "3. Show shape with the largest perimeter")
-                .append("\n" + "4. Show shape with the largest area")
-                .append("\n" + "5. Show formulas")
-                .append("\n" + "6. Credits")
-                .append("\n" + "0. Exit")
-                .append("\n");
-
-        if (inputWasWrong) {
-            mainMenu.append("\n").append("Wrong input! Try again.");
-        }
-
-        consoleClear();
-        System.out.println(mainMenu);
     }
 
     /**
