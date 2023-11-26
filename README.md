@@ -44,7 +44,6 @@ a table, consisting of stored Shape objects, with dynamic column width allocatio
    at your file explorer
 6. Use the application in your Terminal. Make your inputs with your keyboard:
    - Your inputs will be all validated, so don't need to worry about bugs or crashes. :)
-7. Be happy!
 
 <br>
 
